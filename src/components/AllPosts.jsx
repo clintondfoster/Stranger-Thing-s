@@ -28,11 +28,11 @@ return (
             <Link to="/posts">All Posts</Link>
         </div>
         <div>
-            <Link to="/RTK">RTK</Link>
+            <Link to="/Profile">Profile</Link>
         </div>
     </nav>
     {posts.length > 0 && (
-        <SearchBar onSearch={handleSearch} filteredPosts={filteredPosts}/>
+        <SearchBar onSearch={handleSearch} />
     )}
     <div>
         {isLoading && <div>Loading...</div>}
@@ -46,13 +46,12 @@ return (
         : posts.map((post, idx) => (
             <div key={idx}>
                 <h2>{post.title}</h2>
-                <p>{post.desceription}</p>
+                <p>{post.description}</p>
                 </div>
         ))}
         </div>
     </div>
     )
 }
-
 
 export default AllPosts;

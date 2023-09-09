@@ -1,6 +1,6 @@
 // import React from 'react';
 import { useState } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 function SearchBar({ onSearch }) {
     
@@ -24,8 +24,8 @@ function SearchBar({ onSearch }) {
 }
 
 SearchBar.propTypes = {
-    onSearch: PropTypes.func.isRequired,
-    posts: PropTypes.array.isRequired,
+    // onSearch: PropTypes.func.isRequired,
+    // posts: PropTypes.array.isRequired,
 };
 
 
