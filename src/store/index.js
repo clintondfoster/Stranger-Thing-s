@@ -11,5 +11,4 @@ export const store = configureStore({
         getDefaultMiddleware().concat(postsApi.middleware),
 });
 
-// console.log("store", store)
 export default store;

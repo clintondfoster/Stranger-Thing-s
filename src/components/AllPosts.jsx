@@ -6,18 +6,24 @@ import { Link } from 'react-router-dom';
 
 function AllPosts() {
 
-const { data, isLoading, isError } = useGetAllPostsQuery();
-const posts = data?.posts || [];
+const { data , isLoading, isError } = useGetAllPostsQuery();
+const posts = data?.posts;
+// console.log(`data ${data}` )
+console.log(`isLoading ${isLoading}`)
+console.log(`isError ${isError}`)
+// console.log(data)
+console.log("posts", data)
 const [filteredPosts, setFilteredPosts] = useState([]);
-console.log("posts", posts)
+
 
 const handleSearch = (searchTerm) => {
     const filtered = posts?.filter((post) => 
-    post.title.toLowerCase().includes(searchTerm.toLowerCase())
+        // console.log(posts);
+        post.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
     setFilteredPosts(filtered || []);
-console.log("filtered", filtered);
+    console.log("filtered", filtered);
 }
 
 
@@ -31,7 +37,7 @@ return (
             <Link to="/Profile">Profile</Link>
         </div>
     </nav>
-    {posts.length > 0 && (
+    {data.posts.length > 0 && (
         <SearchBar onSearch={handleSearch} />
     )}
     <div>
@@ -41,9 +47,10 @@ return (
             <div key={idx}>
                 <h2>{post.title}</h2>
                 <p>{post.description}</p>
-            </div>
+            </div> 
         ))
-        : posts.map((post, idx) => (
+        :
+         posts.map((post, idx) => (
             <div key={idx}>
                 <h2>{post.title}</h2>
                 <p>{post.description}</p>
