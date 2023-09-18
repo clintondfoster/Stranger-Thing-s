@@ -6,6 +6,10 @@ function SearchBar({ onSearch }) {
     
     const [searchTerm, setSearchTerm] = useState("");
 
+    const handleInputChange = (e) => {
+        setSearchTerm(e.target.value);
+    }
+
     const handleSearch = () => {
         onSearch(searchTerm)
     };
@@ -16,7 +20,7 @@ function SearchBar({ onSearch }) {
                 type='text'
                 placeholder='Search for a post'
                 value= {searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+                onChange={handleInputChange}
             />
             <button onClick={handleSearch}>Search</button>
             </div>

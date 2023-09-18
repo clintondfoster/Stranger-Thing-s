@@ -7,8 +7,9 @@ function RouterComponent () {
     return (
         <div>
             <Routes>
-                <Route path="/posts" element={<AllPosts />} />
-                <Route path="/post/:postId" element={<SinglePost />} />
+                <Route path="/" element={<AllPosts />} />
+                <Route path='/posts' element={<AllPosts />} />
+                <Route path="/posts/:postId" element={<SinglePost />} />
                 <Route path="/profile" element={<Profile />} />
             </Routes>
         </div>

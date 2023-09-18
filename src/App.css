@@ -1,42 +1,109 @@
-#root {
-  max-width: 1280px;
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 800px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 20px;
+}
+
+/* Page header */
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Post item */
+.post-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+.post-item h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.post-item p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+/* Search bar */
+.search-bar {
+  margin-bottom: 20px;
+}
+
+/* Loading indicator */
+.loading {
   text-align: center;
+  font-size: 18px;
+  color: #333;
+  margin-top: 20px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Error message */
+.error {
+  text-align: center;
+  font-size: 18px;
+  color: red;
+  margin-top: 20px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Back to all posts link */
+.back-link {
+  display: block;
+  margin-top: 20px;
+  font-size: 16px;
+  text-decoration: none;
+  color: #007bff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Navbar */
+.navbar {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 0;
+  flex-direction: column;
 }
 
-.card {
-  padding: 2em;
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
 }
 
-.read-the-docs {
-  color: #888;
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* Single post page */
+.single-post {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+.single-post h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.single-post p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
 }
