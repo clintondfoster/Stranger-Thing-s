@@ -5,7 +5,6 @@ import NavBar from './NavBar'
 import { Link } from 'react-router-dom'
 // import { useNavigate } from 'react-router-dom';
 
-
 function AllPosts() {
 
 const { data: postsData, isLoading, isError } = useGetAllPostsQuery();
@@ -13,6 +12,8 @@ const [filteredPosts, setFilteredPosts] = useState([]);
 const [errorMessage, setErrorMessage] = useState('');
 const [searchTerm, setSearchTerm] = useState('');
 
+
+// const post = isLoading ? postsData.data.posts.filter((i)=> i.id === "64f79b92805b650014cbe25c") : [];
 // const posts = data?.posts;
 // console.log(`data ${data}` )
 console.log(`isLoading ${isLoading}`)
@@ -27,6 +28,7 @@ useEffect(() => {
         setErrorMessage("Error loading posts.")
     }
 }, [isError]);
+
 
 useEffect(() => {
     if (postsData) {
@@ -62,8 +64,8 @@ return (
         {isError && <div className="error">{errorMessage}</div>}
         {filteredPosts.length > 0 ? (
             <div>
-            {filteredPosts.map((post, idx) => (
-                <div className="post-item" key={idx}>
+            {filteredPosts.map((post) => (
+                <div className="post-item" key={post._id}>
                     <h2>{post.title}</h2>
                     <p>{post.description}</p>
                     <Link className="back-link" to={`/posts/${post._id}`}>View</Link>

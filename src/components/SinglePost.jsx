@@ -1,5 +1,5 @@
 
-import { useGetSinglePostQuery } from "../store/apiSlice";
+import { useGetAllPostsQuery } from "../store/apiSlice";
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 
@@ -8,23 +8,29 @@ function SinglePost() {
 
 // const post = posts.find((p) => p_.id === postId)
 const { postId } = useParams();
-const { data: post, isLoading, isError } = useGetSinglePostQuery(postId);
+const { data: postsData, isLoading, isError } = useGetAllPostsQuery();
 
-console.log("postId", postId)
+// console.log("postId", postId)
 // console.log('data', data)
 // console.log("loading", isLoading)
+
+console.log(postsData);
+
+
+// setState to object filter
+// useEfffect isLoading when changes data === "undefined" : singlePost comonenet to state
+
+const post = isLoading ? postsData.data.posts.filter((i)=> i.id === postId) : [];
 
 console.log("data", post)
 
 if (isLoading) {
     return <div>Loading...</div>
-}
-if (isError) {
+} else if (isError) {
     return <div>Error loading posts.</div>
-}
-if (!post) {
+} else if (!post) {
     return <div>Post not found!</div>
-}
+} else {
     return (
             <div>
                <h2>{post.title}</h2>
@@ -35,5 +41,6 @@ if (!post) {
                 </div>   
         );
     }
+}
 
 export default SinglePost;
